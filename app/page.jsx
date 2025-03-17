@@ -1,11 +1,12 @@
 "use client";
-import Navbar from "./components/Navbar/Navbar";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import Home from "./components/Home/Home"; // Your main page component
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="font-montserrat">
-      <Navbar />
-      {/* Main Content */}
-    </div>
+    <LoadingScreen>
+      <Home />
+      
+    </LoadingScreen>
   );
 }

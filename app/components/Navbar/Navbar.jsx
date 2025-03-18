@@ -1,32 +1,38 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; // ✅ Detects current page
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isNavbarActive, setIsNavbarActive] = useState(false); // Track user interaction
+  const [isNavbarActive, setIsNavbarActive] = useState(false);
+  const pathname = usePathname(); // ✅ Get the current route
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsNavbarActive(true);
+      } else if (!isMenuOpen) {
+        setIsNavbarActive(false);
       }
     };
 
-    const handleInteraction = () => {
-      setIsNavbarActive(true);
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("click", handleInteraction);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("click", handleInteraction);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    // ✅ Navbar should be black on all pages except the home page
+    if (pathname !== "/") {
+      setIsNavbarActive(true);
+    } else {
+      setIsNavbarActive(false);
+    }
+  }, [pathname]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -58,9 +64,8 @@ export default function Home() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 ${
-            isNavbarActive ? "bg-black" : "bg-transparent"
-          }`}
+          className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
+            ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-transparent"}`} // ✅ Changes background accordingly
         >
           <div className="font-extrabold text-xl drop-shadow-lg">VJC Infra</div>
 

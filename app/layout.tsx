@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
+import Navbar from "../app/components/Navbar/Navbar"; // Adjusted import path
+import LoadingScreen from "../app/components/LoadingScreen/LoadingScreen"; // Import LoadingScreen
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-montserrat", // This allows us to use CSS variables
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <LoadingScreen>  {/* ✅ Wrap everything with LoadingScreen */}
+          <Navbar /> 
+          {children}  
+        </LoadingScreen>
+      </body>
     </html>
   );
 }

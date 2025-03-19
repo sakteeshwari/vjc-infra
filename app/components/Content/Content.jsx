@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
-
 const slides = [
     { id: 1, topic: "Our story", content: "Quality is not only our standard. It's also an attitude instilled in our company.", video: "/assets/videocontent7.mp4" },
     { id: 2, topic: "Our client commitment", content: "Quality construction begins with a quality relationship.", video: "/assets/videocontent2.mp4" },
@@ -37,8 +36,36 @@ const Content = () => {
     
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setIsSlideOpen(true); // Ensure the slides open again
+        setIsSlideOpen(true);
     };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+        setIsSlideOpen(true);
+    };
+
+    const handleDrag = (event, info) => {
+        console.log("Drag event detected:", info.delta.y); // Debugging
+        const dragThreshold = 30; // Reduce threshold for better sensitivity
+    
+        if (info.delta.y < -dragThreshold) {
+            console.log("Next slide triggered");
+            nextSlide(); // Swipe Up → Next Slide
+        } else if (info.delta.y > dragThreshold) {
+            console.log("Previous slide triggered");
+            prevSlide(); // Swipe Down → Previous Slide
+        }
+    };
+
+    // Alternative: Handle Mouse Scroll for Navigation
+const handleWheel = (event) => {
+    if (event.deltaY > 50) {
+        nextSlide(); // Scroll Down → Next Slide
+    } else if (event.deltaY < -50) {
+        prevSlide(); // Scroll Up → Previous Slide
+    }
+};
+    
 
     return (
         <div className="w-full flex flex-col items-center justify-center relative">
@@ -118,19 +145,24 @@ const Content = () => {
 
                 <AnimatePresence mode="">
                     {isSlideOpen && currentSlide !== null && (
-                        <motion.div
-                            key={slides[currentSlide].id}
-                            className="absolute -top-[665px] left-0 w-full h-[665px]  text-white flex justify-center items-center overflow-hidden"
-                            initial={{ x: "100%", opacity: 0, scale: 0.9 }} // Start off-screen with a slight zoom out
-                            animate={{ x: "0%", opacity: 1, scale: 1 }} // Smoothly appear with zoom-in effect
-                            exit={{ x: "-100%", opacity: 0, scale: 0.9 }} // Exit smoothly to the left
-                            transition={{
-                                duration: 0,
-                                ease: "easeInOut",
-                                opacity: { duration: 0.5 }, // Faster fade-in
-                                scale: { duration: 0.8, ease: "easeOut" } // Smooth zoom-in
-                            }}
-                        >
+                       <motion.div
+                       key={slides[currentSlide].id}
+                       className="absolute -top-[665px] left-0 w-full h-[665px] text-white flex justify-center items-center overflow-hidden"
+                       initial={{ x: "100%", opacity: 0, scale: 0.9 }}
+                       animate={{ x: "0%", opacity: 1, scale: 1 }}
+                       exit={{ x: "-100%", opacity: 0, scale: 0.9 }}
+                       transition={{
+                           duration: 0,
+                           ease: "easeInOut",
+                           opacity: { duration: 0.5 },
+                           scale: { duration: 0.8, ease: "easeOut" },
+                       }}
+                       drag="y"
+                       dragConstraints={{ top: -100, bottom: 100 }} // More flexible dragging
+                       dragElastic={0.5} // Smoother drag feel
+                       onDragEnd={handleDrag}
+                       onWheel={handleWheel}
+                   >
                             <div className="absolute top-0 left-0 w-full h-full">
                                 {/* Video Background */}
                                 <video

@@ -51,8 +51,8 @@ export default function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black/50 to-transparent"></div>
+          <div className="absolute ">
+            <div className="absolute top-0 left-0  w-full h-20 bg-gradient-to-b from-black/50 to-transparent"></div>
             <video autoPlay loop muted className="w-full h-full object-cover">
               <source src="/assets/construction-video2.mp4" type="video/mp4" />
             </video>
@@ -66,7 +66,7 @@ export default function Home() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
+        className={`px-10 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
           ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`} // ✅ Changes background accordingly
       >
         <div className="font-extrabold text-xl drop-shadow-lg">VJC Infra</div>

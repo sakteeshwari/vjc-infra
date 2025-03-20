@@ -19,10 +19,10 @@ const Solutionimg = () => {
         transition={{ duration: 1, ease: "easeOut" }} // Smooth animation
         className="absolute top-30 left-7 w-96 text-left lg:top-60  lg:w-[50%]  text-white bg-black/40 p-4 rounded-lg"
       >
-        <h1 className="text-xl font-bold text-red-500 drop-shadow-lg">
+        <h1 className="text-xl tracking-widest font-bold text-red-500 drop-shadow-lg">
           We Value
         </h1>
-        <p className="text-2xl md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
+        <p className="text-2xl tracking-widest md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
         Quality is Our Stand
         </p>
       </motion.div>
@@ -43,18 +43,18 @@ const Solutionimg = () => {
         viewport={{ once: true }}
         className="bg-white w-[90%]  tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto text-center "
       >
-        <p className="text-red-500 uppercase font-semibold text-sm mb-2">
+        <p className="text-red-500 uppercase tracking-wider font-semibold text-sm mb-2">
           Say Hello !
         </p>
 
         {/* Heading */}
-        <h2 className="text-2xl mt-5 md:text-3xl font-bold text-gray-900 leading-tight mb-4">
+        <h2 className="text-2xl tracking-wider mt-5 md:text-3xl font-bold text-gray-900 leading-tight mb-4">
           For a <span className="text-black">project,</span> as a <br />
           <span className="text-black">partner</span> or as a <span className="text-black">team.</span>
         </h2>
 
         {/* Description */}
-        <p className="text-gray-500 mt-5 font-semibold text-sm md:text-base leading-relaxed">
+        <p className="text-gray-500 tracking-wider mt-5 font-semibold text-sm md:text-base leading-relaxed">
           We are blending physical building structures from concepts and ideas to link 
           people and space to the solution they need to be more efficient and productive. 
           If you’re a potential employee or want to become a vendor or have a project, 

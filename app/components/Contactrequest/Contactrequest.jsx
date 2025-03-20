@@ -8,7 +8,7 @@ const Careers = () => {
     return (
         <div>
             {/* Image Section */}
-            <div className="h-screen mt-10 md:mt-32 lg:w-[80%] lg:mt-40 relative lg:mx-auto md:mx-10">
+            <div className="h-screen mt-10 md:mt-32 lg:w-[80%] tracking-widest lg:mt-40 relative lg:mx-auto md:mx-10">
                 <img 
                     src="/assets/about.png" 
                     alt="section_image" 

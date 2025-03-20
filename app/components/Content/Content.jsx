@@ -68,24 +68,24 @@ const handleWheel = (event) => {
     
 
     return (
-        <div className="w-full flex flex-col items-center justify-center relative">
+        <div className="w-full flex  flex-col items-center justify-center relative">
             {!showContent ? (
                 <motion.div
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="absolute bottom-0 w-full flex flex-col md:flex-row"
+                    className="absolute  bottom-0 w-full flex flex-col md:flex-row"
                 >
                     <motion.div
                         initial={{ x: -100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1, scale: [0.9, 1] }}
                         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="bg-red-500 pl-6 md:pl-32 text-white w-full md:w-[40%] p-10"
+                        className="bg-red-500 pl-6 tracking-wider md:pl-32 text-white w-full md:w-[40%] p-10"
                     >
                         <motion.p className="text-xs uppercase text-gray-300">Experts Since 1997</motion.p>
-                        <motion.h1 className="text-2xl font-bold mt-2">
+                        <motion.h1 className="text-2xl tracking-wider font-bold mt-2">
                             VJC Infra is a comprehensive construction management team and general contractor.
                         </motion.h1>
                     </motion.div>
@@ -113,7 +113,7 @@ const handleWheel = (event) => {
                         hover:bg-red-500 hover:text-white transition-all duration-500 ease-in-out"
                         onClick={handleScroll}
                     >
-                        <p className="font-bold">Scroll to discover</p>
+                        <p className="font-bold tracking-wider">Scroll to discover</p>
                     </motion.div>
 
                     <motion.div

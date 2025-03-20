@@ -19,10 +19,10 @@ const Solutionimg = () => {
         transition={{ duration: 1, ease: "easeOut" }} // Smooth animation
         className="absolute top-30 left-7 w-96 text-left lg:top-60  lg:w-[50%]  text-white bg-black/40 p-4 rounded-lg"
       >
-        <h1 className="text-xl font-bold text-red-500 drop-shadow-lg">
+        <h1 className="text-xl tracking-wider font-bold text-red-500 drop-shadow-lg">
           We Process
         </h1>
-        <p className="text-2xl md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
+        <p className="text-2xl tracking-wider md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
         Success comes from the process
         </p>
       </motion.div>

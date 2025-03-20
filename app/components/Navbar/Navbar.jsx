@@ -67,7 +67,7 @@ export default function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
-          ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-transparent"}`} // ✅ Changes background accordingly
+          ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`} // ✅ Changes background accordingly
       >
         <div className="font-extrabold text-xl drop-shadow-lg">VJC Infra</div>
 
@@ -86,14 +86,20 @@ export default function Home() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
-            {navLinks.map((link, index) => (
-              <Link key={index} href={link.path} className="py-2 text-white hover:text-orange-600">
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        )}
+  <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
+    {navLinks.map((link, index) => (
+      <Link key={index} href={link.path} className="py-5 text-white hover:text-orange-600">
+        {link.name}
+      </Link>
+    ))}
+
+    {/* Contact Us Link Added */}
+    <Link href="/contact" className="py-6 text-white font-bold text-sm hover:text-orange-600">
+      Contact Us
+    </Link>
+  </div>
+)}
+
 
         <Link href="/contact" className="py-2 text-white hidden font-bold text-sm lg:flex hover:text-orange-600">
           Contact

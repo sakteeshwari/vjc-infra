@@ -42,7 +42,7 @@ export default function LoadingScreen({ children }) {
             <motion.div
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="text-5xl font-extrabold text-red-500"
+              className="lg:text-5xl text-3xl font-extrabold text-red-500"
             >
               VJC INFRA
             </motion.div>

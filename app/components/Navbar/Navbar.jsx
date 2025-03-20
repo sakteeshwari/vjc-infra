@@ -66,7 +66,7 @@ export default function Home() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`px-10 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
+        className={`px-10 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center py-6 text-white uppercase transition-all duration-500 
           ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`} // ✅ Changes background accordingly
       >
         <div className="font-extrabold text-xl drop-shadow-lg">VJC Infra</div>
@@ -107,4 +107,4 @@ export default function Home() {
       </motion.nav>
     </div>
   );
-}
+}       

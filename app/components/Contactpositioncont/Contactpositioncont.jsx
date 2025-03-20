@@ -48,7 +48,7 @@ const Solutionimg = () => {
 
                     {isExpanded && (
                         <div ref={extraContentRef} className="mt-4 text-gray-500 text-sm leading-7">
-                            
+
                             <p className="mt-4"><strong className=""> ROLE AND RESPONSIBILITIES</strong></p>
                             <p className="mt- text-sm leading-7 tracking-wider">This position will be responsible for a varied and complex project support and procedural assistance to project managers. S/he is expected to demonstrate sincere desire to serve our customers and assist with the overall safety, direction completion and financial outcome of construction projects. They must have the ability to work with co-workers in a cooperative manner while remaining flexible, resourceful, proactive, and efficient with a high level of professionalism, and confidentiality. The ideal candidate is one who can work independently with little to no supervision and has experience supporting supervisors in daily administrative construction tasks.
                                 and candidates considered for the position must possess excellent organizational abilities, meticulous attention to detail, strong verbal and written communication skills and demonstrate success in building interpersonal relationships required to work in a fast- paced, creative and collaborative team environment.</p>
@@ -77,7 +77,7 @@ const Solutionimg = () => {
 
 
                             </p>
-                            
+
                             <p className="mt-4"><strong className=""> QUALIFICATIONS AND REQUIREMENTS- THE CANDIDATE MUST POSSESS THE FOLLOWING REQUIREMENTS AND SKILLS:</strong></p>
                             <p className="mt-2 text-sm leading-7 tracking-wider">Our Construction Project Assistant integrity is very important to Maman Corp., we enjoy a reputation for complete and accurate project records and follow thru, while treating our vendors, suppliers and subcontractors in a fair and honest manner. Our Construction Project Assistant must be highly motivated and have a history of integrity, honesty, loyalty and recognize the confidential nature of their role in the business operations.</p>
                             <ul className="list-disc pl-6 space-y-4 mt-6 text-gray-700">
@@ -102,7 +102,7 @@ const Solutionimg = () => {
 
 
                             {/* Preferred Skills Section */}
-                            
+
                             <p className="mt-4"><strong className="">Preferred Skills </strong></p>
                             <ul className="list-disc pl-6 space-y-3 text-gray-800">
                                 <li>Working knowledge of Foundations construction software</li>
@@ -111,7 +111,7 @@ const Solutionimg = () => {
                             </ul>
 
                             {/* Benefits Section */}
-                            
+
                             <p className="mt-4"><strong className="">Benefits</strong></p>
                             <p className="text-gray-700">We offer our employees the following competitive benefits package:</p>
                             <ul className="list-disc pl-6 space-y-3 text-gray-800 mt-3">
@@ -134,12 +134,12 @@ const Solutionimg = () => {
 
                     <div className="mt-6 flex justify-start items-center group">
                         <button
-                            onClick={() => console.log("Apply Now clicked")}
+                            onClick={scrollToContactForm}
                             className="font-bold uppercase text-xs pr-4 cursor-pointer tracking-widest relative transition-all duration-300 ease-in-out 
-                            hover:text-red-600 hover:scale-105"
+                        hover:text-red-600 hover:scale-105"
                         >
                             Apply Now
-
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out"></span>
                         </button>
 
                         <div className="border-b border-gray-400 w-1/3 lg:w-[10%] transition-all duration-300 ease-in-out group-hover:w-1/2 group-hover:border-red-600"></div>
@@ -212,12 +212,12 @@ const Solutionimg = () => {
 
                     <div className="mt-6 flex justify-start items-center group">
                         <button
-                            onClick={() => console.log("Apply Now clicked")}
+                            onClick={scrollToContactForm}
                             className="font-bold uppercase text-xs pr-4 cursor-pointer tracking-widest relative transition-all duration-300 ease-in-out 
-                            hover:text-red-600 hover:scale-105"
+                        hover:text-red-600 hover:scale-105"
                         >
                             Apply Now
-
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 ease-in-out"></span>
                         </button>
 
                         <div className="border-b border-gray-400 w-1/3 lg:w-[10%] transition-all duration-300 ease-in-out group-hover:w-1/2 group-hover:border-red-600"></div>

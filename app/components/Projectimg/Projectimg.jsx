@@ -13,7 +13,7 @@ const Solutionimg = () => {
         playsInline
         className="lg:h-screen w-full h-96 object-cover"
       >
-        <source src="/assets/projectvideo.mp4" type="video/mp4" />
+        <source src="/assets/projectsvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -25,10 +25,10 @@ const Solutionimg = () => {
         className="absolute top-30 left-7 w-80 md:w-96 text-left lg:top-60 lg:w-[50%] text-white bg-black/40 p-4 rounded-lg"
       >
         <h1 className="md:text-xl tracking-wider font-bold text-red-500 drop-shadow-lg">
-          We Process
+          We Build
         </h1>
         <p className="text-xl tracking-wider md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
-          Success comes from the process
+        Creating Landmarks Constructing Legacies
         </p>
       </motion.div>
     </div>

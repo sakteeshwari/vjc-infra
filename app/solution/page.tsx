@@ -5,6 +5,7 @@ import Solutioncontent from "../components/Solutioncontent/Solutioncontent"
 import Solutionimgdown from "../components/Solutionimgdown/Solutionimgdown"
 import Solutionredbg from "../components/Solutionredbg/Solutionredbg"
 import Solutionindus from "../components/Solutionindus/Solutionindus"
+import Solutionlast from "../components/Solutionlast/Solutionslast"
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
         <Solutionimgdown></Solutionimgdown>
         <Solutionredbg></Solutionredbg>
         <Solutionindus></Solutionindus>
+        <Solutionlast></Solutionlast>
       <Footer></Footer>
     </div>
   )

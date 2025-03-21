@@ -14,12 +14,12 @@ export default function ConstructionSection() {
   ];
 
   return (
-    <div className="relative w-full px-8 md:px-16 lg:px-32 py-16 bg-white">
+    <div className="relative w-full px-8 md:px-16 lg:px-32 xl:px-44 py-16 bg-white">
       {/* Image and Text Container */}
       <div className="relative flex flex-col md:flex-row items-center">
         {/* Text Content */}
         <div className="md:w-1/2 text-left md:pr-16">
-          <ul className="lg:text-3xl text-lg text-gray-600">
+          <ul className="lg:text-3xl text-lg text-gray-800">
             {items.map((item, index) => (
               <li
                 key={index}
@@ -54,6 +54,8 @@ export default function ConstructionSection() {
           />
         </div>
       </div>
+      
     </div>
+   
   );
 }

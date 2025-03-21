@@ -17,12 +17,12 @@ const Solutionimg = () => {
         initial={{ opacity: 0, x: 50 }} // Start hidden and slightly left
         animate={{ opacity: 1, x: 0 }} // Fade in and move to position
         transition={{ duration: 1, ease: "easeOut" }} // Smooth animation
-        className="absolute top-30 left-7 w-96 text-left lg:top-60  lg:w-[50%]  text-white bg-black/40 p-4 rounded-lg"
+        className="absolute top-30 left-7 w-80 md:w-96 text-left lg:top-60  lg:w-[50%]  text-white bg-black/40 p-4 rounded-lg"
       >
-        <h1 className="text-xl tracking-widest font-bold text-red-500 drop-shadow-lg">
+        <h1 className="md:text-xl tracking-widest font-bold text-red-500 drop-shadow-lg">
           We Value
         </h1>
-        <p className="text-2xl tracking-widest md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
+        <p className="text-xl tracking-widest md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
         Quality is Our Stand
         </p>
       </motion.div>

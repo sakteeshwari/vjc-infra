@@ -1,13 +1,13 @@
 import React from 'react'
-import Solutionimg from "../components/Solutionimg/Solutionimg"
-import Footer from "../components/Footer/Footer"
+import Footer from '../components/Footer/Footer'
+import Solutionimg from '../components/Solutionimg/Solutionimg'
+
 
 const page = () => {
   return (
     <div>
-      <Solutionimg></Solutionimg>
+        <Solutionimg></Solutionimg>
       <Footer></Footer>
-
     </div>
   )
 }

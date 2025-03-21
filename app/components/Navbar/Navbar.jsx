@@ -81,20 +81,53 @@ export default function Home() {
           ))}
         </ul>
 
-        <button className="block lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <motion.button
+  className="block lg:hidden"
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  initial={{ scale: 1, rotate: 0 }}
+  animate={{ scale: isMenuOpen ? 1.1 : 1, rotate: isMenuOpen ? 180 : 0 }} // ✅ Rotate and scale effect
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+>
+  {isMenuOpen ? (
+    <motion.span
+      initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
+      animate={{ opacity: 1, rotate: 90, scale: 1 }}
+      exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <X size={28} />
+    </motion.span>
+  ) : (
+    <motion.span
+      initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
+      animate={{ opacity: 1, rotate: 0, scale: 1 }}
+      exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <Menu size={28} />
+    </motion.span>
+  )}
+</motion.button>
 
         {isMenuOpen && (
   <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
     {navLinks.map((link, index) => (
-      <Link key={index} href={link.path} className="py-5 text-white hover:text-orange-600">
+      <Link 
+        key={index} 
+        href={link.path} 
+        className="py-5 text-white hover:text-orange-600"
+        onClick={() => setIsMenuOpen(false)} // ✅ Close menu on click
+      >
         {link.name}
       </Link>
     ))}
 
     {/* Contact Us Link Added */}
-    <Link href="/contact" className="py-6 text-white font-bold text-sm hover:text-orange-600">
+    <Link 
+      href="/contact" 
+      className="py-6 text-white font-bold text-sm hover:text-orange-600"
+      onClick={() => setIsMenuOpen(false)} // ✅ Now it also closes the menu
+    >
       Contact Us
     </Link>
   </div>

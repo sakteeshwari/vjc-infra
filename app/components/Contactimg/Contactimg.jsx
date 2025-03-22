@@ -19,7 +19,7 @@ const Solutionimg = () => {
         transition={{ duration: 1, ease: "easeOut" }} // Smooth animation
         className="absolute top-30 left-7 w-80 md:w-96 text-left lg:top-60  lg:w-[50%]  text-white bg-black/40 p-4 rounded-lg"
       >
-        <h1 className="md:text-xl tracking-widest font-bold text-red-500 drop-shadow-lg">
+        <h1 className="md:text-xl tracking-widest font-bold text-orange-500 drop-shadow-lg">
           We Value
         </h1>
         <p className="text-xl tracking-widest md:text-2xl mt-1 lg:text-5xl lg:leading-normal font-semibold drop-shadow-lg">
@@ -43,7 +43,7 @@ const Solutionimg = () => {
         viewport={{ once: true }}
         className="bg-white w-[90%]  tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto text-center "
       >
-        <p className="text-red-500 uppercase tracking-wider font-semibold text-sm mb-2">
+        <p className="text-orange-600 uppercase tracking-wider font-semibold text-sm mb-2">
           Say Hello !
         </p>
 

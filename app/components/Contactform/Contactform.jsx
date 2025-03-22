@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <div id="contact-us" className="bg-gray-100 py-12  px-4 md:px-16 lg:px-32">
       <form className="max-w-4xl mx-auto text-gray-600  tracking-widest bg-white p-8 shadow-lg rounded-lg">
-        <h1 className="text-red-500 pb-10 font-bold text-center text-xl md:text-3xl lg:text-4xl">GET IN TOUCH.</h1>
+        <h1 className="text-orange-600 pb-10 font-bold text-center text-xl md:text-3xl lg:text-4xl">GET IN TOUCH.</h1>
         {/* Name Section */}
         <div className="mb-6">
           <label className="block font-bold text-lg mb-2">Name<span className="text-red-500">*</span></label>
@@ -40,7 +40,7 @@ const ContactForm = () => {
   </button>
 
   {/* Join a File Button */}
-  <button className="bg-red-500 text-white px-6 py-3 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-red-600">
+  <button className="bg-orange-600 text-white px-6 py-3 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-red-600">
     <span className="transition-transform duration-300 group-hover:rotate-12">📎</span> 
     Join a file
   </button>

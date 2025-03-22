@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         {/* Logo Section */}
         <div className="flex flex-col items-center mb-8">
-          <img src="/assets/logo.png" alt="VJC INFRA" className="h-16 mb-3" />
-          <h1 className="text-2xl font-bold tracking-widest">VJC INFRA</h1>
+          <img src="/assets/logo-vjc.png" alt="VJC INFRA" className="h-20 w-38 mb-3" />
+          
         </div>
 
         {/* Navigation Links */}

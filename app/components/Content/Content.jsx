@@ -82,7 +82,7 @@ const handleWheel = (event) => {
                         whileInView={{ x: 0, opacity: 1, scale: [0.9, 1] }}
                         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="bg-red-500 pl-6 tracking-wider md:pl-32 text-white w-full md:w-[40%] p-10"
+                        className="bg-orange-600 pl-6 tracking-wider md:pl-32 text-white w-full md:w-[40%] p-10"
                     >
                         <motion.p className="text-xs uppercase text-gray-300">Experts Since 1997</motion.p>
                         <motion.h1 className="text-2xl tracking-wider font-bold mt-2">
@@ -95,7 +95,7 @@ const handleWheel = (event) => {
                         whileInView={{ x: 0, opacity: 1, scale: [0.95, 1] }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="bg-red-500 text-white w-full md:w-[30%] p-10"
+                        className="bg-orange-600 text-white w-full md:w-[30%] p-10"
                     >
                         <motion.p className="mt-4 text-sm text-gray-300">
                             We create environments for your team to do its best work. We do it through expertise, creativity,
@@ -109,8 +109,8 @@ const handleWheel = (event) => {
                         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.1 }}
-                        className="flex text-red-600 items-center bg-white cursor-pointer w-full md:w-[20%] justify-center 
-                        hover:bg-red-500 hover:text-white transition-all duration-500 ease-in-out"
+                        className="flex text-orange-600 items-center bg-white cursor-pointer w-full md:w-[20%] justify-center 
+                        hover:bg-orange-600 hover:text-white transition-all duration-500 ease-in-out"
                         onClick={handleScroll}
                     >
                         <p className="font-bold tracking-wider">Scroll to discover</p>
@@ -135,7 +135,7 @@ const handleWheel = (event) => {
                             initial={{ y: 0 }}
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-                            className="h-12 w-12 group-hover:stroke-red-500 transition-colors duration-300"
+                            className="h-12 w-12 group-hover:stroke-orange-600 shadow-2xl transition-colors duration-300"
                         >
                             <path d="M12 5v14M5 12l7 7 7-7" />
                         </motion.svg>
@@ -209,7 +209,7 @@ const handleWheel = (event) => {
                                     }}
                                     whileTap={{ scale: 0.9 }}
                                     className="mt-6 px-6 py-3 bg-red-500 text-white font-bold uppercase rounded-lg 
-              hover:bg-red-600 transition-all duration-300 cursor-pointer"
+              hover:bg-orange-600 transition-all duration-300 cursor-pointer"
                                     onClick={() => alert(`Know more about: ${slides[currentSlide].topic}`)}
                                 >
                                     Know More

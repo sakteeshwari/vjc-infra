@@ -31,7 +31,7 @@ const Solutionimg = () => {
             <div className=" space-y-10">
                 {/* Job Item */}
                 <div className="border-t border-gray-300 pt-10">
-                    <h2 className="text-red-600 font-bold text-lg tracking-widest">
+                    <h2 className="text-orange-600 font-bold text-lg tracking-widest">
                         Construction Project Assistant
                     </h2>
                     <p className="text-gray-500 mt-4 tracking-wider text-sm leading-7">
@@ -39,7 +39,7 @@ const Solutionimg = () => {
                         <span>
                             <button
                                 onClick={toggleMoreInfo}
-                                className="text-black tracking-widest font-semibold text-sm cursor-pointer transition-all duration-300 hover:text-red-600"
+                                className="text-black tracking-widest font-semibold text-sm cursor-pointer transition-all duration-300 hover:text-orange-600"
                             >
                                 {isExpanded ? " Show Less" : " More Info"}
                             </button>
@@ -148,7 +148,7 @@ const Solutionimg = () => {
 
                 {/* Job Item */}
                 <div className="border-t border-gray-300 pt-10">
-                    <h2 className="text-red-600 font-bold text-lg tracking-widest">
+                    <h2 className="text-orange-600 font-bold text-lg tracking-widest">
                         Carpenters
                     </h2>
                     <p className="text-gray-500 mt-4 tracking-wider text-sm leading-7">

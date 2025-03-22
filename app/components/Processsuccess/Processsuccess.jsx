@@ -55,7 +55,7 @@ export default function ProcessSection() {
         transition={{ duration: 1 }}
         className="text-center mb-12"
       >
-        <h2 className="text-2xl lg:text-5xl font-bold text-red-600">
+        <h2 className="text-2xl lg:text-5xl font-bold text-orange-600">
           Success comes <br className="hidden md:block" /> from process
         </h2>
         <div className="flex flex-col md:flex-row justify-center mt-8 text-gray-600">
@@ -98,7 +98,7 @@ export default function ProcessSection() {
               className="md:w-1/2 text-left"
             >
               <p className="text-sm font-bold text-gray-700">{project.id}</p>
-              <h3 className="text-xl lg:text-3xl font-bold text-red-600 mt-2">{project.title}</h3>
+              <h3 className="text-xl lg:text-3xl font-bold text-orange-600 mt-2">{project.title}</h3>
               <p className="text-gray-600 mt-4">{project.description}</p>
             </motion.div>
 

@@ -25,7 +25,7 @@ export default function ExpertsSection() {
   ];
 
   return (
-    <section className="bg-red-700 text-white py-16 px-8 md:px-16 lg:px-32">
+    <section className="bg-orange-700 text-white py-16 px-8 md:px-16 lg:px-32">
       <div className="text-center">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Our in-house experts</h2>
         <p className="mt-2  lg:text-xl">

@@ -16,9 +16,9 @@ const Careers = () => {
                 />
 
                 {/* Red Box */}
-                <div className="w-[80%] md:w-[50%] lg:w-[40%] xl:w-[35%]  absolute top-0 left-1/2 md:-top-16 md:left-64 transform -translate-x-1/2 bg-red-600 text-white shadow-lg p-6">
+                <div className="w-[80%] md:w-[50%] lg:w-[40%] xl:w-[35%]  absolute top-0 left-1/2 md:-top-16 md:left-64 transform -translate-x-1/2 bg-orange-600 text-white shadow-lg p-6">
                     {/* Header */}
-                    <div className="bg-red-700 py-4 px-6 bg-opacity-80">
+                    <div className="bg-orange-700 py-4 px-6 bg-opacity-80">
                         <h2 className="text-lg font-bold">Any request ?</h2>
                     </div>
 

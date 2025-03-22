@@ -26,7 +26,7 @@ export default function ConstructionSection() {
 
       {/* Text Content */}
       <div className="mt-12 md:mt-16 max-w-2xl">
-        <h2 className="text-xl md:text-3xl font-bold text-red-500">
+        <h2 className="text-xl md:text-3xl font-bold text-orange-600">
           Ours is a labor of love.
         </h2>
         <p className="mt-4 text-gray-600 md:text-lg">

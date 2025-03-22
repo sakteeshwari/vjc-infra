@@ -31,7 +31,7 @@ export default function ConstructionSection() {
               >
                 <span
                   className={`transition-transform duration-500 transform ${
-                    hovered === index ? "text-red-500 translate-x-2" : "text-red-400"
+                    hovered === index ? "text-orange-600 translate-x-2" : "text-orange-400"
                   }`}
                 >
                   →

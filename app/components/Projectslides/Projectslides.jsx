@@ -80,7 +80,7 @@ export default function FullPageScroll() {
         >
           {/* Content */}
           <div className="lg:w-1/2 flex flex-col justify-center">
-            <h1 className="text-2xl lg:text-4xl font-bold text-red-600">{section.title}</h1>
+            <h1 className="text-2xl lg:text-4xl font-bold text-orange-600">{section.title}</h1>
             <p className="mt-4 text-gray-700 tracking-wider lg:text-lg">{section.description}</p>
           </div>
 
@@ -90,7 +90,7 @@ export default function FullPageScroll() {
           </div>
 
           {/* Navigation & Info */}
-          <div className="absolute bottom-6 w-full max-w-4xl bg-red-600 text-white py-4 px-6 flex justify-between lg:justify-center lg:gap-20 items-center">
+          <div className="absolute bottom-6 w-full max-w-4xl bg-orange-600 text-white py-4 px-6 flex justify-between lg:justify-center lg:gap-20 items-center">
             {/* Single Arrow Button */}
             <button
               onClick={() => handleScroll("down")}

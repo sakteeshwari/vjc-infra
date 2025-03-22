@@ -53,29 +53,29 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black/50 to-transparent"></div>
           <video autoPlay loop muted className="w-full h-full object-cover">
-            <source src="/assets/projectvideos.mp4" type="video/mp4" />
+            <source src="/assets/construction-video2.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-opacity-60"></div>
         </div>
       </motion.div>
-      
+
       {/* Navbar */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
-          ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`}
+          ${isNavbarActive || isMenuOpen ? "bg-gray-500" : "bg-gradient-to-b from-black/50 to-transparent"}`}
       >
-        <Link href="/">
+       <Link href="/">
   <motion.img 
-    src="/assets/vjc-logo2.png"
+    src="/assets/logo-vjc.png"
     initial={{ y: -20, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ type: "spring", stiffness: 120 }}
     whileHover={{ scale: 1.1, rotate: 2 }}
     whileTap={{ scale: 0.9 }}
-    className="h-12 w-24 drop-shadow-lg"  // Added shadow
+    className="h-12 w-24 drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"  // Added stronger glow
     alt="Logo" 
   />
 </Link>
@@ -83,9 +83,9 @@ export default function Home() {
         <ul className="hidden lg:flex space-x-6 text-white font-bold text-sm drop-shadow-lg">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link 
-                href={link.path} 
-                className={`hover:text-red-600 ${pathname === link.path ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight active page
+              <Link
+                href={link.path}
+                className={`hover:text-orange-600 ${pathname === link.path ? "text-orange-600 pointer-events-none" : ""}`} // ✅ Highlight active page
               >
                 {link.name}
               </Link>
@@ -124,10 +124,10 @@ export default function Home() {
         {isMenuOpen && (
           <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
             {navLinks.map((link, index) => (
-              <Link 
-                key={index} 
-                href={link.path} 
-                className={`py-5 text-white hover:text-red-600 ${pathname === link.path ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable active page
+              <Link
+                key={index}
+                href={link.path}
+                className={`py-5 text-white hover:text-orange-600 ${pathname === link.path ? "text-orange-600 pointer-events-none" : ""}`} // ✅ Highlight and disable active page
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
@@ -135,9 +135,9 @@ export default function Home() {
             ))}
 
             {/* Contact Us Link */}
-            <Link 
-              href="/contact" 
-              className={`py-6 text-white font-bold text-sm hover:text-red-600 ${pathname === "/contact" ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
+            <Link
+              href="/contact"
+              className={`py-6 text-white font-bold text-sm hover:text-orange-600 ${pathname === "/contact" ? "text-orange-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us
@@ -145,9 +145,9 @@ export default function Home() {
           </div>
         )}
 
-        <Link 
-          href="/contact" 
-          className={`py-2 text-white hidden font-bold text-sm lg:flex hover:text-red-600 ${pathname === "/contact" ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
+        <Link
+          href="/contact"
+          className={`py-2 text-white hidden font-bold text-sm lg:flex hover:text-orange-600 ${pathname === "/contact" ? "text-orange-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
           onClick={() => setIsMenuOpen(false)}
         >
           Contact

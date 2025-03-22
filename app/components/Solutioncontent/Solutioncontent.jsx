@@ -12,7 +12,7 @@ export default function EmergencyService() {
       <div className="relative z-10 flex flex-col md:flex-row items-center w-full">
         {/* Left Content */}
         <div className="w-full lg:w-1/2">
-          <h2 className="md:text-2xl lg:text-3xl font-bold text-red-500">
+          <h2 className="md:text-2xl lg:text-3xl font-bold text-orange-600">
             VJC INFRA Emergency <br /> Service Team
           </h2>
           <hr className="w-24 border-t-2 border-gray-300 mt-2" />

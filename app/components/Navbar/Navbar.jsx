@@ -26,7 +26,6 @@ export default function Home() {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    // ✅ Navbar should be black on all pages except the home page
     if (pathname !== "/") {
       setIsNavbarActive(true);
     } else {
@@ -45,36 +44,49 @@ export default function Home() {
   return (
     <div className={`relative w-full tracking-wider leading-loose shadow-[0_-20px_20px_-10px_rgba(0,0,0,0.5)] ${pathname === "/" ? "h-screen" : ""}`}>
 
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-center"
-        >
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black/50 to-transparent"></div>
-            <video autoPlay loop muted className="w-full h-full object-cover">
-              <source src="/assets/construction-video2.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-opacity-60"></div>
-          </div>
-        </motion.div>
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="text-center"
+      >
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black/50 to-transparent"></div>
+          <video autoPlay loop muted className="w-full h-full object-cover">
+            <source src="/assets/projectvideos.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-opacity-60"></div>
+        </div>
+      </motion.div>
       
-
       {/* Navbar */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center p-6 text-white uppercase transition-all duration-500 
-          ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`} // ✅ Changes background accordingly
+          ${isNavbarActive || isMenuOpen ? "bg-black" : "bg-gradient-to-b from-black/50 to-transparent"}`}
       >
-        <div className="font-extrabold text-xl drop-shadow-lg">VJC Infra</div>
+        <Link href="/">
+  <motion.img 
+    src="/assets/vjc-logo2.png"
+    initial={{ y: -20, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ type: "spring", stiffness: 120 }}
+    whileHover={{ scale: 1.1, rotate: 2 }}
+    whileTap={{ scale: 0.9 }}
+    className="h-12 w-24 drop-shadow-lg"  // Added shadow
+    alt="Logo" 
+  />
+</Link>
 
         <ul className="hidden lg:flex space-x-6 text-white font-bold text-sm drop-shadow-lg">
           {navLinks.map((link, index) => (
             <li key={index}>
-              <Link href={link.path} className="hover:text-orange-600">
+              <Link 
+                href={link.path} 
+                className={`hover:text-red-600 ${pathname === link.path ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight active page
+              >
                 {link.name}
               </Link>
             </li>
@@ -82,59 +94,62 @@ export default function Home() {
         </ul>
 
         <motion.button
-  className="block lg:hidden"
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
-  initial={{ scale: 1, rotate: 0 }}
-  animate={{ scale: isMenuOpen ? 1.1 : 1, rotate: isMenuOpen ? 180 : 0 }} // ✅ Rotate and scale effect
-  transition={{ duration: 0.4, ease: "easeInOut" }}
->
-  {isMenuOpen ? (
-    <motion.span
-      initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
-      animate={{ opacity: 1, rotate: 90, scale: 1 }}
-      exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      <X size={28} />
-    </motion.span>
-  ) : (
-    <motion.span
-      initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
-      animate={{ opacity: 1, rotate: 0, scale: 1 }}
-      exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      <Menu size={28} />
-    </motion.span>
-  )}
-</motion.button>
+          className="block lg:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          initial={{ scale: 1, rotate: 0 }}
+          animate={{ scale: isMenuOpen ? 1.1 : 1, rotate: isMenuOpen ? 180 : 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          {isMenuOpen ? (
+            <motion.span
+              initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 90, scale: 1 }}
+              exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <X size={28} />
+            </motion.span>
+          ) : (
+            <motion.span
+              initial={{ opacity: 0, rotate: 0, scale: 0.8 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 0, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <Menu size={28} />
+            </motion.span>
+          )}
+        </motion.button>
 
         {isMenuOpen && (
-  <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
-    {navLinks.map((link, index) => (
-      <Link 
-        key={index} 
-        href={link.path} 
-        className="py-5 text-white hover:text-orange-600"
-        onClick={() => setIsMenuOpen(false)} // ✅ Close menu on click
-      >
-        {link.name}
-      </Link>
-    ))}
+          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
+            {navLinks.map((link, index) => (
+              <Link 
+                key={index} 
+                href={link.path} 
+                className={`py-5 text-white hover:text-red-600 ${pathname === link.path ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable active page
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
 
-    {/* Contact Us Link Added */}
-    <Link 
-      href="/contact" 
-      className="py-6 text-white font-bold text-sm hover:text-orange-600"
-      onClick={() => setIsMenuOpen(false)} // ✅ Now it also closes the menu
-    >
-      Contact Us
-    </Link>
-  </div>
-)}
+            {/* Contact Us Link */}
+            <Link 
+              href="/contact" 
+              className={`py-6 text-white font-bold text-sm hover:text-red-600 ${pathname === "/contact" ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </div>
+        )}
 
-
-        <Link href="/contact" className="py-2 text-white hidden font-bold text-sm lg:flex hover:text-orange-600">
+        <Link 
+          href="/contact" 
+          className={`py-2 text-white hidden font-bold text-sm lg:flex hover:text-red-600 ${pathname === "/contact" ? "text-red-600 pointer-events-none" : ""}`} // ✅ Highlight and disable
+          onClick={() => setIsMenuOpen(false)}
+        >
           Contact
         </Link>
       </motion.nav>

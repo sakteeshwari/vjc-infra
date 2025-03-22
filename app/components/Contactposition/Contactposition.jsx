@@ -31,13 +31,13 @@ const Solutionimg = () => {
           viewport={{ once: true }}
           className="bg-white w-[90%] text-left tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto shadow-md"
         >
-          <p className="text-red-500 uppercase font-semibold text-sm mb-2">
+          <p className="text-orange-600 uppercase font-semibold text-sm mb-2">
             Open position
           </p>
 
           {/* Description */}
           <p className="text-gray-500 mt-5 font-semibold text-sm md:text-base leading-relaxed">
-            Please remember that all offers of employment at Maman Corp. are
+            Please remember that all offers of employment at VJC INFRA are
             subject to the successful completion and verification of
             pre-employment drug screen test, clear MVR, background screen which
             may include education verification where applicable, E-Verify

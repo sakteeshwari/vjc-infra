@@ -35,7 +35,7 @@ const Solutionimg = () => {
                         Construction Project Assistant
                     </h2>
                     <p className="text-gray-500 mt-4 tracking-wider text-sm leading-7">
-                        MAMAN CORP. IS AN ESTABLISHED, SUCCESSFUL AND GROWING COMMERCIAL GENERAL CONTRACTOR SERVING CHICAGOLAND AND NATIONAL CLIENTELE. WE ARE SEEKING TO ADD TO OUR TEAM A CONSTRUCTION PROJECT ADMINISTRATOR WITH A PROVEN TRACK RECORD OF SUCCESS... <span> </span>
+                        VJC INFRA IS AN ESTABLISHED, SUCCESSFUL AND GROWING COMMERCIAL GENERAL CONTRACTOR SERVING CHICAGOLAND AND NATIONAL CLIENTELE. WE ARE SEEKING TO ADD TO OUR TEAM A CONSTRUCTION PROJECT ADMINISTRATOR WITH A PROVEN TRACK RECORD OF SUCCESS... <span> </span>
                         <span>
                             <button
                                 onClick={toggleMoreInfo}
@@ -79,7 +79,7 @@ const Solutionimg = () => {
                             </p>
 
                             <p className="mt-4"><strong className=""> QUALIFICATIONS AND REQUIREMENTS- THE CANDIDATE MUST POSSESS THE FOLLOWING REQUIREMENTS AND SKILLS:</strong></p>
-                            <p className="mt-2 text-sm leading-7 tracking-wider">Our Construction Project Assistant integrity is very important to Maman Corp., we enjoy a reputation for complete and accurate project records and follow thru, while treating our vendors, suppliers and subcontractors in a fair and honest manner. Our Construction Project Assistant must be highly motivated and have a history of integrity, honesty, loyalty and recognize the confidential nature of their role in the business operations.</p>
+                            <p className="mt-2 text-sm leading-7 tracking-wider">Our Construction Project Assistant integrity is very important to VJC INFRA, we enjoy a reputation for complete and accurate project records and follow thru, while treating our vendors, suppliers and subcontractors in a fair and honest manner. Our Construction Project Assistant must be highly motivated and have a history of integrity, honesty, loyalty and recognize the confidential nature of their role in the business operations.</p>
                             <ul className="list-disc pl-6 space-y-4 mt-6 text-gray-700">
                                 <li><strong>Master in Excel</strong> (Must understand and be able to enter formulas and functions)</li>
                                 <li>2-10 years of experience in the construction field</li>
@@ -127,7 +127,7 @@ const Solutionimg = () => {
                                 <br />
                                 <strong>PLEASE NO PHONE CALLS.</strong>
                                 <br />
-                                <strong>MAMAN CORP. is an equal opportunity affirmative action employer, including veterans and disability status.</strong>
+                                <strong>VJC INFRA is an equal opportunity affirmative action employer, including veterans and disability status.</strong>
                             </p>
                         </div>
                     )}
@@ -152,7 +152,7 @@ const Solutionimg = () => {
                         Carpenters
                     </h2>
                     <p className="text-gray-500 mt-4 tracking-wider text-sm leading-7">
-                        Maman Corp. is always accepting Carpenter applications & we are signatory to
+                        VJC INFRA is always accepting Carpenter applications & we are signatory to
                         the Chicago Regional Council of Carpenters. Please submit your resume and
                         work history so when we have a specific need we can find the right candidate.
                         Be sure to include any knowledge or certifications regarding use of... <span> </span>
@@ -188,10 +188,10 @@ const Solutionimg = () => {
                                 It is the policy of Maman Corp to maintain a safe, healthy, and productive work environment for all its employees; to produce quality goods and services for its customers in an efficient manner; to maintain the integrity and security of its facilities and property, and to perform all these functions in a fashion consistent with the interests and concerns of the communities in which it is located.
                             </p>
                             <p className="mt-4 text-sm leading-7 tracking-wider">
-                                Pursuant to these goals, Maman Corp requires candidates for employment to pass a drug/alcohol screening test covering illegal substances and legal substances subject to abuse. This requires the candidate to submit a urine, hair, and/or blood specimen and to sign a consent and release statement provided by Maman Corp. Refusal will result in the candidate’s disqualification for further employment consideration.
+                                Pursuant to these goals, Maman Corp requires candidates for employment to pass a drug/alcohol screening test covering illegal substances and legal substances subject to abuse. This requires the candidate to submit a urine, hair, and/or blood specimen and to sign a consent and release statement provided by VJC INFRA Refusal will result in the candidate’s disqualification for further employment consideration.
                             </p>
 
-                            <h2 className=" font-bold tracking-wider text-red-600 mt-6">
+                            <h2 className=" font-bold tracking-wider text-orange-600 mt-6">
                                 DISCLAIMER
                             </h2>
                             <p className="mt-4 text-sm leading-7 tracking-wider">

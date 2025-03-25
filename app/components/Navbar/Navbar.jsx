@@ -122,7 +122,7 @@ export default function Home() {
         </motion.button>
 
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 flex flex-col text-center p-4">
+          <div className="absolute top-24 left-0 w-full bg-gray-500 bg-opacity-90 flex flex-col text-center p-4">
             {navLinks.map((link, index) => (
               <Link
                 key={index}

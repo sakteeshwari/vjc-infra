@@ -49,7 +49,7 @@ export default function LoadingScreen({ children }) {
 
             {/* Subtitle */}
             <p className="text-sm tracking-widest uppercase text-gray-600 mt-2">
-              Construction Solutions
+              Projects Private Limited
             </p>
 
             {/* Counting Number (1 to 100) */}

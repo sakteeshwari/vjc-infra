@@ -43,7 +43,7 @@ export default function ConstructionSection() {
         </div>
 
         {/* Image Section (Fixed size to avoid flickering) */}
-        <div className="md:w-1/2 mt-10 w-full relative h-[300px] md:h-[400px]">
+        <div className="md:w-1/2 mt-10 w-full relative h-[300px] md:h-[400px] hover:scale-105 transition-transform duration-400 ease-in-out">
           <img
             src={hovered !== null ? items[hovered].image : "/assets/solutionindus.png"}
             alt="Construction Preview"

@@ -1,15 +1,17 @@
+"use client"
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
-    { id: 1, topic: "Our story", content: "Quality is not only our standard. It's also an attitude instilled in our company.", video: "/assets/videocontent7.mp4" },
-    { id: 2, topic: "Our client commitment", content: "Quality construction begins with a quality relationship.", video: "/assets/videocontent2.mp4" },
-    { id: 3, topic: "Our Vision", content: "We go beyond the expected to find the best possible solution.", video: "/assets/videocontent3.mp4" },
-    { id: 4, topic: "Our expertise", content: "A higher level of satisfaction inside and out.", video: "/assets/videocontent4.mp4" },
-    { id: 5, topic: "Who we are", content: "Our highly skilled team is always at your service.", video: "/assets/videocontent5.mp4" },
-    { id: 6, topic: "Our safety services", content: "Building a safer workplace.", video: "/assets/videocontent6.mp4" },
-    { id: 7, topic: "Our personal commitment", content: "At its heart, construction isn't about structures. It's about people.", video: "/assets/videocontentone.mp4" },
+    { id: 1, topic: "Our story", content: "Quality is not only our standard. It's also an attitude instilled in our company.", video: "/assets/videocontent7.mp4", link: "/our-story" },
+    { id: 2, topic: "Our client commitment", content: "Quality construction begins with a quality relationship.", video: "/assets/videocontent2.mp4", link: "/client-commitment" },
+    { id: 3, topic: "Our Vision", content: "We go beyond the expected to find the best possible solution.", video: "/assets/videocontent3.mp4", link: "/vision" },
+    { id: 4, topic: "Our expertise", content: "A higher level of satisfaction inside and out.", video: "/assets/videocontent4.mp4", link: "/expertise" },
+    { id: 5, topic: "Who we are", content: "Our highly skilled team is always at your service.", video: "/assets/videocontent5.mp4", link: "/who-we-are" },
+    { id: 6, topic: "Our safety services", content: "Building a safer workplace.", video: "/assets/videocontent6.mp4", link: "/safety-services" },
+    { id: 7, topic: "Our personal commitment", content: "At its heart, construction isn't about structures. It's about people.", video: "/assets/videocontentone.mp4", link: "/personal-commitment" },
 ];
 
 
@@ -33,7 +35,7 @@ const Content = () => {
         setCurrentSlide(0); // Start from the first slide
         setIsSlideOpen(true); // Ensure the slides open again
     };
-    
+
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         setIsSlideOpen(true);
@@ -47,7 +49,7 @@ const Content = () => {
     const handleDrag = (event, info) => {
         console.log("Drag event detected:", info.delta.y); // Debugging
         const dragThreshold = 30; // Reduce threshold for better sensitivity
-    
+
         if (info.delta.y < -dragThreshold) {
             console.log("Next slide triggered");
             nextSlide(); // Swipe Up → Next Slide
@@ -58,14 +60,14 @@ const Content = () => {
     };
 
     // Alternative: Handle Mouse Scroll for Navigation
-const handleWheel = (event) => {
-    if (event.deltaY > 50) {
-        nextSlide(); // Scroll Down → Next Slide
-    } else if (event.deltaY < -50) {
-        prevSlide(); // Scroll Up → Previous Slide
-    }
-};
-    
+    const handleWheel = (event) => {
+        if (event.deltaY > 50) {
+            nextSlide(); // Scroll Down → Next Slide
+        } else if (event.deltaY < -50) {
+            prevSlide(); // Scroll Up → Previous Slide
+        }
+    };
+
 
     return (
         <div className="w-full flex  flex-col items-center justify-center relative">
@@ -145,24 +147,24 @@ const handleWheel = (event) => {
 
                 <AnimatePresence mode="">
                     {isSlideOpen && currentSlide !== null && (
-                       <motion.div
-                       key={slides[currentSlide].id}
-                       className="absolute -top-[665px] left-0 w-full h-[665px] text-white flex justify-center items-center overflow-hidden"
-                       initial={{ x: "100%", opacity: 0, scale: 0.9 }}
-                       animate={{ x: "0%", opacity: 1, scale: 1 }}
-                       exit={{ x: "-100%", opacity: 0, scale: 0.9 }}
-                       transition={{
-                           duration: 0,
-                           ease: "easeInOut",
-                           opacity: { duration: 0.5 },
-                           scale: { duration: 0.8, ease: "easeOut" },
-                       }}
-                       drag="y"
-                       dragConstraints={{ top: -100, bottom: 100 }} // More flexible dragging
-                       dragElastic={0.5} // Smoother drag feel
-                       onDragEnd={handleDrag}
-                       onWheel={handleWheel}
-                   >
+                        <motion.div
+                            key={slides[currentSlide].id}
+                            className="absolute -top-[665px] left-0 w-full h-[665px] text-white flex justify-center items-center overflow-hidden"
+                            initial={{ x: "100%", opacity: 0, scale: 0.9 }}
+                            animate={{ x: "0%", opacity: 1, scale: 1 }}
+                            exit={{ x: "-100%", opacity: 0, scale: 0.9 }}
+                            transition={{
+                                duration: 0,
+                                ease: "easeInOut",
+                                opacity: { duration: 0.5 },
+                                scale: { duration: 0.8, ease: "easeOut" },
+                            }}
+                            drag="y"
+                            dragConstraints={{ top: -100, bottom: 100 }} // More flexible dragging
+                            dragElastic={0.5} // Smoother drag feel
+                            onDragEnd={handleDrag}
+                            onWheel={handleWheel}
+                        >
                             <div className="absolute top-0 left-0 w-full h-full">
                                 {/* Video Background */}
                                 <video
@@ -199,6 +201,7 @@ const handleWheel = (event) => {
                                     {slides[currentSlide].content}
                                 </motion.h1>
 
+                                <Link href={slides[currentSlide].link || "#"}>
                                 <motion.button
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -208,12 +211,11 @@ const handleWheel = (event) => {
                                         boxShadow: "0px 10px 20px rgba(255, 0, 0, 0.5)",
                                     }}
                                     whileTap={{ scale: 0.9 }}
-                                    className="mt-6 px-6 py-3 bg-red-500 text-white font-bold uppercase rounded-lg 
-              hover:bg-orange-600 transition-all duration-300 cursor-pointer"
-                                    onClick={() => alert(`Know more about: ${slides[currentSlide].topic}`)}
+                                    className="mt-6 px-6 py-3 cursor-pointer bg-orange-600 text-white font-bold uppercase rounded-lg hover:bg-orange-600 transition-all"
                                 >
                                     Know More
                                 </motion.button>
+                            </Link>
                             </div>
 
                             {/* ❌ Close Slide Button */}

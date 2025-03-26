@@ -6,7 +6,7 @@ export default function ConstructionSection() {
       {/* Image Container */}
       <div className="relative flex flex-col md:flex-row gap-6 md:gap-0">
         {/* Large Image */}
-        <div className="md:w-2/3 w-full">
+        <div className="md:w-2/3 w-full hover:scale-105 transition-transform duration-400 ease-in-out">
           <img
             src="/assets/carpenter1.png"
             alt="Carpenter Working"
@@ -15,7 +15,7 @@ export default function ConstructionSection() {
         </div>
 
         {/* Small Image */}
-        <div className="md:w-1/3 w-full md:absolute md:bottom-0 md:top-80 md:right-0 md:translate-x-16 translate-y-6">
+        <div className="md:w-1/3 w-full md:absolute md:bottom-0 md:top-80 md:right-0 md:translate-x-16 translate-y-6 hover:scale-105 transition-transform duration-400 ease-in-out">
           <img
             src="/assets/carpenter2.png"
             alt="Factory Interior"

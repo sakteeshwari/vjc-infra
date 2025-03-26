@@ -39,9 +39,10 @@ const Solutionimg = () => {
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+       
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="bg-white w-[90%]  tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto text-center "
+        className="bg-white w-[90%]  tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto text-center hover:scale-105 transition-transform duration-400 ease-in-out"
       >
         <p className="text-orange-600 uppercase tracking-wider font-semibold text-sm mb-2">
           Say Hello !

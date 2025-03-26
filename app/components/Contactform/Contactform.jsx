@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <div id="contact-us" className="bg-gray-100 py-12  px-4 md:px-16 lg:px-32">
-      <form className="max-w-4xl mx-auto text-gray-600  tracking-widest bg-white p-8 shadow-lg rounded-lg">
+    <div id="contact-us" className="bg-gray-100 py-12  px-4 md:px-16 lg:px-32 ">
+      <form className="max-w-4xl mx-auto text-gray-600  tracking-widest bg-white p-8 shadow-lg rounded-lg hover:scale-105 transition-transform duration-400 ease-in-out">
         <h1 className="text-orange-600 pb-10 font-bold text-center text-xl md:text-3xl lg:text-4xl">GET IN TOUCH.</h1>
         {/* Name Section */}
         <div className="mb-6">

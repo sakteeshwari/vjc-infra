@@ -29,7 +29,7 @@ const Solutionimg = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-white w-[90%] text-left tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto shadow-md"
+          className="bg-white w-[90%] text-left tracking-wider px-6 md:px-12 py-10 max-w-3xl mx-auto shadow-md hover:scale-105 transition-transform duration-400 ease-in-out"
         >
           <p className="text-orange-600 uppercase font-semibold text-sm mb-2">
             Open position

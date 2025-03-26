@@ -41,7 +41,7 @@ const Solutionimg = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gray-900  w-[90%]  tracking-wider px-8 md:px-12 py-10 max-w-3xl mx-auto text-left "
+          className="bg-gray-900  w-[90%] hover:scale-105 transition-transform duration-400 ease-in-out  tracking-wider px-8 md:px-12 py-10 max-w-3xl mx-auto text-left "
         >
 
 

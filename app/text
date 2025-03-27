@@ -1,62 +1,6 @@
-<motion.div
-initial={{ x: -100, opacity: 0 }}
-whileInView={{ x: 0, opacity: 1, scale: [0.8, 1.2, 1] }}
-transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-viewport={{ once: true }}
-className="group cursor-pointer flex items-center justify-center w-full md:w-[10%] p-4"
-onClick={handleScroll}
->
-<motion.svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="white"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    initial={{ y: 0 }}
-    animate={{ y: [0, 10, 0] }}
-    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-    className="h-12 w-12 group-hover:stroke-red-500 transition-colors duration-300"
->
-    <path d="M12 5v14M5 12l7 7 7-7" />
-</motion.svg>
-</motion.div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-transition={{
-  duration: 0,
-  ease: "easeInOut",
-  opacity: { duration: 0.5 }, // Faster fade-in
-  scale: { duration: 0.8, ease: "easeOut" } }// Smooth zoom-in
-
-  drag="y"
-  dragConstraints={{ top: 0, bottom: 0 }}
-  dragElastic={0.2}
-  onDragEnd={(_, info) => {
-      if (info.offset.y < -50) {
-          nextSlide(); // Drag up → Next slide
-      } else if (info.offset.y > 50) {
-          prevSlide(); // Drag down → Previous slide
-      }
-}}
->
+{/* Join a File Button */}
+  <button className="bg-orange-600 text-white px-6 py-3 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-red-600">
+    <span className="transition-transform duration-300 group-hover:rotate-12">📎</span> 
+    Join a file
+  </button>
+  <p className="p-2 mt-4 text-gray-500"> *The attach a file should be able to receive .doc, .docx, and .pdf file formats.</p>

@@ -1,54 +1,159 @@
-import React from "react";
+"use client"; // Required for Next.js App Router
 
-const ContactForm = () => {
-  return (
-    <div id="contact-us" className="bg-gray-100 py-12  px-4 md:px-16 lg:px-32 ">
-      <form className="max-w-4xl mx-auto text-gray-600  tracking-widest bg-white p-8 shadow-lg rounded-lg hover:scale-105 transition-transform duration-400 ease-in-out">
-        <h1 className="text-orange-600 pb-10 font-bold text-center text-xl md:text-3xl lg:text-4xl">GET IN TOUCH.</h1>
-        {/* Name Section */}
-        <div className="mb-6">
-          <label className="block font-bold text-lg mb-2">Name<span className="text-red-500">*</span></label>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Name" className="border border-gray-200 p-5  w-full outline-none focus:ring-2 focus:ring-gray-400" />
-            <input type="text" placeholder="Name of your company" className="border border-gray-200 p-5 outline-none focus:ring-2 focus:ring-gray-400  w-full" />
-          </div>
-        </div>
-        
-        {/* Info Section */}
-        <div className="mb-6 ">
-          <label className="block font-bold text-lg mb-2">Info<span className="text-red-500">*</span></label>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="email" placeholder="Email" className="border border-gray-200 p-5 outline-none focus:ring-2 focus:ring-gra3-400  w-full" />
-            <input type="text" placeholder="Phone" className="border border-gray-200 p-5 outline-none focus:ring-2 focus:ring-gray-400  w-full" />
-            <input type="text" placeholder="Address" className="border border-gray-200 p-5  outline-none focus:ring-2 focus:ring-gray-400 w-full" />
-            <input type="text" placeholder="Best time to call" className="border border-gray-200 p-5 outline-none focus:ring-2 focus:ring-gray-400 w-full" />
-          </div>
-        </div>
-        
-        {/* Message Section */}
-        <div className="mb-6">
-          <label className="block font-bold text-lg mb-2">Your message</label>
-          <textarea placeholder="Type your request here" className="border border-gray-200 p-5 outline-none focus:ring-2 focus:ring-gray-400 w-full h-32"></textarea>
-        </div>
-        
-        {/* Buttons */}
-        <div className="flex flex-col md:flex-row items-center gap-4">
-  {/* Send Message Button */}
-  <button className="bg-gray-900 text-white px-6 py-3 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-gray-900">
-    <span className="transition-transform duration-300 group-hover:translate-x-1">➤</span> 
-    Send message
-  </button>
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-  {/* Join a File Button */}
-  <button className="bg-orange-600 text-white px-6 py-3 flex items-center gap-2 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-red-600">
-    <span className="transition-transform duration-300 group-hover:rotate-12">📎</span> 
-    Join a file
-  </button>
-</div>
-        <p className="p-2 mt-4 text-gray-500"> *The attach a file should be able to receive .doc, .docx, and .pdf file formats.</p>
-      </form>
-    </div>
-  );
+// Validation Schema
+const schema = yup.object().shape({
+    firstName: yup.string().required("First Name is required"),
+    lastName: yup.string().required("Last Name is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    contactNo: yup.string()
+        .matches(/^\d{10}$/, "Contact No. must be 10 digits")
+        .required("Contact No. is required"),
+    companyName: yup.string().required("Company Name is required"),
+    projectDetails: yup.string().min(10, "Project details must be at least 10 characters long"),
+    privacyPolicy: yup.boolean().oneOf([true], "You must accept the privacy policy"),
+});
+
+const Contactus = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [file, setFile] = useState(null);
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors, isValid },
+    } = useForm({
+        resolver: yupResolver(schema),
+        mode: "onChange",
+    });
+
+    const handleFileChange = (event) => {
+        setFile(event.target.files[0]);
+    };
+
+    const onSubmit = async (data) => {
+        setIsSubmitting(true);
+        const formData = new FormData();
+        
+        // Append form fields
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+        });
+
+        // Append file if uploaded
+        if (file) {
+            formData.append("attachment", file);
+        }
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (response.ok) {
+                alert("Message sent successfully!");
+                reset();
+                setFile(null);
+            } else {
+                alert("Error sending message. Please try again.");
+            }
+        } catch (error) {
+            alert("Something went wrong!");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="h-full w-full py-10 flex items-center justify-center px-4 bg-gray-200">
+            <div className="max-w-2xl w-full h-full bg-white p-8  shadow-md hover:shadow-lg transition-transform duration-300 ease-in-out">
+                <h1 className="text-3xl text-center font-semibold text-orange-600 mb-6">
+                    GET IN TOUCH <span className="text-red-600 font-bold">.</span>
+                </h1>
+                <form className="space-y-6 mt-10" onSubmit={handleSubmit(onSubmit)}>
+                    {/* Input Fields */}
+                    {[
+                        { label: "First Name", name: "firstName" },
+                        { label: "Last Name", name: "lastName" },
+                        { label: "Email", name: "email", type: "email" },
+                        { label: "Phone No", name: "contactNo", type: "tel" },
+                        { label: "Company Name", name: "companyName" },
+                    ].map(({ label, name, type = "text" }) => (
+                        <div key={name} className="pt-4">
+                            <label className="block text-sm font-semibold text-orange-800 italic">
+                                {label}
+                            </label>
+                            <input
+                                type={type}
+                                {...register(name)}
+                                className="mt-6 block w-full border border-gray-300 py-6 px-3 focus:ring-gray-500 focus:border-gray-500 outline-none hover:shadow-lg"
+                                placeholder={`Enter your ${label.toLowerCase()}`}
+                            />
+                            <p className="text-red-500 text-sm">{errors[name]?.message}</p>
+                        </div>
+                    ))}
+
+                    {/* Project Details */}
+                    <div className="pt-4">
+                        <label className="block text-sm font-semibold text-orange-800 italic">
+                            Something about your project
+                        </label>
+                        <textarea
+                            {...register("projectDetails")}
+                            rows="4"
+                            className="mt-6 block w-full border border-gray-300 hover:shadow-lg py-2 px-3 focus:ring-gray-500 focus:border-gray-500 outline-none"
+                            placeholder="Describe your project here"
+                        ></textarea>
+                        <p className="text-red-500 text-sm">{errors.projectDetails?.message}</p>
+                    </div>
+
+                    {/* File Upload */}
+                    <div className="pt-4">
+                        <label className="block text-sm font-semibold text-orange-800 italic">
+                            Attach a file (optional)
+                        </label>
+                        <input
+                            type="file"
+                            onChange={handleFileChange}
+                            className="mt-2 block w-full border border-gray-300 py-2 px-3 focus:ring-gray-500 focus:border-gray-500 outline-none hover:shadow-lg"
+                        />
+                        {file && <p className="text-green-600 text-sm">Selected file: {file.name}</p>}
+                    </div>
+
+                    {/* Privacy Policy Checkbox */}
+                    <div className="flex items-center pt-4">
+                        <input
+                            type="checkbox"
+                            {...register("privacyPolicy")}
+                            className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                        />
+                        <label className="ml-2 text-sm text-gray-700">
+                            I confirm, I have read and agree to <span className="underline text-orange-700 font-semibold">KALVEN's Privacy Policy</span>.
+                        </label>
+                    </div>
+                    <p className="text-red-500 text-sm">{errors.privacyPolicy?.message}</p>
+
+                    {/* Submit Button with Animation */}
+                    <div className="flex justify-center pt-4">
+                        <button
+                            type="submit"
+                            disabled={!isValid || isSubmitting}
+                            className={`w-40 py-2 px-4 rounded-md font-medium transition-all duration-300 transform active:scale-95 
+                                ${isValid ? "bg-orange-500 text-white hover:bg-orange-600" : "bg-gray-400 cursor-not-allowed"}`}
+                        >
+                            {isSubmitting ? "Sending..." : "Submit"}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 };
 
-export default ContactForm;
+export default Contactus;

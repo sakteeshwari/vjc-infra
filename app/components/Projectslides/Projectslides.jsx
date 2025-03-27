@@ -149,7 +149,7 @@ export default function FullPageScroll() {
               initial={{ y: 0 }}
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-              className="lg:h-12 lg:w-12 hover:stroke-gray-700 transition-colors duration-300"
+              className="lg:h-12 lg:w-12 cursor-pointer hover:stroke-gray-700 transition-colors duration-300"
             >
               <path d="M12 19V5M5 12l7-7 7 7" />
             </motion.svg>
@@ -193,7 +193,7 @@ export default function FullPageScroll() {
               initial={{ y: 0 }}
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-              className="lg:h-12 lg:w-12 hover:stroke-gray-700 transition-colors duration-300"
+              className="lg:h-12 lg:w-12 cursor-pointer hover:stroke-gray-700 transition-colors duration-300"
             >
               <path d="M12 5v14M5 12l7 7 7-7" />
             </motion.svg>

@@ -1,38 +1,28 @@
 import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
-import formidable from "formidable";
-import fs from "fs";
-
-export const config = {
-    api: {
-        bodyParser: false, // Disable Next.js default body parser
-    },
-};
 
 export async function POST(req) {
     try {
-        const form = new formidable.IncomingForm();
+        const formData = await req.formData();
+        const file = formData.get("file");
+        const firstName = formData.get("firstName");
+        const lastName = formData.get("lastName");
+        const email = formData.get("email");
+        const contactNo = formData.get("contactNo");
+        const companyName = formData.get("companyName");
+        const projectDetails = formData.get("projectDetails");
 
-        const { fields, files } = await new Promise((resolve, reject) => {
-            form.parse(req, (err, fields, files) => {
-                if (err) reject(err);
-                else resolve({ fields, files });
+        let attachments = [];
+
+        if (file) {
+            const fileBuffer = Buffer.from(await file.arrayBuffer());
+            attachments.push({
+                filename: file.name,
+                content: fileBuffer,
             });
-        });
-
-        const { firstName, lastName, email, contactNo, companyName, projectDetails } = fields;
-
-        if (!firstName || !lastName || !email || !contactNo || !companyName || !projectDetails) {
-            return NextResponse.json({ message: "All fields are required" }, { status: 400 });
-        }
-
-        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_HOST) {
-            console.error("❌ Missing Email Configuration in Environment Variables");
-            return NextResponse.json({ message: "Email configuration is missing" }, { status: 500 });
         }
 
         const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
+            host: "smtp.hostinger.com",
             port: 465,
             secure: true,
             auth: {
@@ -41,33 +31,27 @@ export async function POST(req) {
             },
         });
 
-        let attachments = [];
-        if (files.attachment) {
-            const file = files.attachment;
-            const fileData = fs.readFileSync(file.filepath);
-            attachments.push({ filename: file.originalFilename, content: fileData });
-        }
-
         const mailOptions = {
-            from: `VJC Infra Private Limited Contact Form <${process.env.EMAIL_USER}>`,
+            from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
             subject: "New Contact Form Submission",
-            text: `
-                Name: ${firstName} ${lastName}
-                Email: ${email}
-                Contact No: ${contactNo}
-                Company Name: ${companyName}
-                Project Details: ${projectDetails}
+            html: `
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Last Name:</strong> ${lastName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone No:</strong> ${contactNo}</p>
+                <p><strong>Company Name:</strong> ${companyName}</p>
+                <p><strong>Message:</strong> ${projectDetails}</p>
             `,
-            attachments,
+            attachments, // Attach file if uploaded
         };
 
         await transporter.sendMail(mailOptions);
-        console.log("✅ Email Sent Successfully");
 
-        return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
+        return new Response(JSON.stringify({ message: "Email sent successfully!" }), { status: 200 });
+
     } catch (error) {
-        console.error("❌ Error sending email:", error);
-        return NextResponse.json({ message: "Error sending email", error: error.message }, { status: 500 });
+        console.error("Email error:", error);
+        return new Response(JSON.stringify({ message: "Error sending email", error: error.toString() }), { status: 500 });
     }
 }

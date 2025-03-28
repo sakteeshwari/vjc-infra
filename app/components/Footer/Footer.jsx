@@ -37,9 +37,9 @@ const Footer = () => {
 
       {/* Address Section */}
       <div className="text-center leading-loose tracking-wider text-sm mb-8">
-        <p className="font-bold text-lg tracking-widest">VJC INFRA.</p>
-        <p className="tracking-widest">1055 Arthur Ave</p>
-        <p className="tracking-widest">Elk Grove Village, IL 60007</p>
+        <p className="font-bold text-lg tracking-widest">VJC Infra Projects Private Limited.</p>
+        <p className="tracking-widest">62/A, Sundari Reddy Bhavan, Ground Floor, Vengalrao Nagar, S.R.Nagar,</p>
+        <p className="tracking-widest">Hyderabad-500038 Telangana, India.</p>
       </div>
 
       {/* Divider */}
@@ -50,7 +50,7 @@ const Footer = () => {
         <p className="tracking-widest">© 2025 VJC INFRA. All Rights Reserved.</p>
         <a href="/terms-conditions" className="hover:text-gray-400 tracking-widest cursor-pointer">Terms & Conditions</a>
         <a href="https://www.immersivegarden.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 cursor-pointer tracking-widest">
-          WEBSITE BY <span className="text-white">VJC INFRA</span>
+          WEBSITE BY <span className="text-white">VJC Infra Projects Private Limited</span>
         </a>
       </div>
     </footer>

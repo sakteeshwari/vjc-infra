@@ -166,24 +166,23 @@ const Content = () => {
 
                 <AnimatePresence mode="">
                     {isSlideOpen && currentSlide !== null && (
-                        <motion.div
-                            key={slides[currentSlide].id}
-                            className="absolute -top-[665px] left-0 w-full h-[665px] text-white flex justify-center items-center overflow-hidden"
-                            initial={{ x: "100%", opacity: 0, scale: 0.9 }}
-                            animate={{ x: "0%", opacity: 1, scale: 1 }}
-                            exit={{ x: "-100%", opacity: 0, scale: 0.9 }}
-                            transition={{
-                                duration: 2,
-                                ease: "easeInOut",
-                                opacity: { duration: 0.5 },
-                                scale: { duration: 0.8, ease: "easeOut" },
-                            }}
-                            drag="y"
-                            dragConstraints={{ top: -100, bottom: 100 }}
-                            dragElastic={0.5}
-                            onDragEnd={handleDrag}
-                        
-                        >
+                      <motion.div
+                      key={slides[currentSlide].id}
+                      className="absolute -top-[740px] left-0 w-full h-[740px] text-white flex justify-center items-center overflow-hidden"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{
+                          duration: 1.2,
+                          ease: "easeInOut",
+                      }}
+                      drag="y"
+                      dragConstraints={{ top: -100, bottom: 100 }}
+                      dragElastic={0.5}
+                      onDragEnd={handleDrag}
+                  >
+                  
+                   
                             <div className="absolute top-0 left-0 w-full h-full">
                                 {/* Video Background */}
                                 <video
@@ -239,7 +238,7 @@ const Content = () => {
 
                             {/* ❌ Close Slide Button */}
                             <button
-                                className="absolute top-5 right-5 bg-white/10 backdrop-blur-md p-3 rounded-full text-white shadow-lg hover:bg-white/20 transition-all duration-300"
+                                className="absolute top-32 right-14 bg-white/10 backdrop-blur-md p-3 rounded-full text-white shadow-lg hover:bg-white/20 transition-all duration-300"
                                 onClick={closeSlide}
                             >
                                 <X size={30} className="text-white" />

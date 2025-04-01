@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Home() {
+export default function Navbar({ isSlideOpen }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const pathname = usePathname();
@@ -60,10 +60,10 @@ export default function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center py-4 text-white uppercase transition-all duration-500 
-          ${isNavbarActive || isMenuOpen ? "bg-gray-500" : "bg-gradient-to-b from-black/50 to-transparent"}`}
+          ${isNavbarActive || isMenuOpen || isSlideOpen ? "bg-gray-500" : "bg-gradient-to-b from-black/50 to-transparent"}`}
       >
         <Link href="/">
-          <motion.img 
+          <motion.img
             src="/assets/logo-vjc.png"
             style={{
               filter: "contrast(1.2) brightness(1.2)",
@@ -74,7 +74,7 @@ export default function Home() {
             whileHover={{ scale: 1.2, rotate: 2, filter: "brightness(1.5) drop-shadow(0px 0px 10px rgba(255,255,255,0.8))" }}
             whileTap={{ scale: 0.9 }}
             className="h-12 w-24 transition-all duration-300"
-            alt="Logo" 
+            alt="Logo"
           />
         </Link>
 

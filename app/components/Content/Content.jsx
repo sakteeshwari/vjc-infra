@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Link from "next/link";
@@ -30,12 +30,6 @@ const Content = () => {
         }, 300);
     };
 
-    const handleScroll = () => {
-        setShowContent(true);
-        setCurrentSlide(0); // Start from the first slide
-        setIsSlideOpen(true); // Ensure the slides open again
-    };
-
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         setIsSlideOpen(true);
@@ -45,6 +39,39 @@ const Content = () => {
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
         setIsSlideOpen(true);
     };
+
+   
+
+    useEffect(() => {
+        const handleWheel = (event) => {
+            if (!showContent) {
+                setShowContent(true);
+                setIsSlideOpen(true);
+                return;
+            }
+    
+            if (event.deltaY > 50) {
+                nextSlide();
+            } else if (event.deltaY < -50) {
+                prevSlide();
+            }
+        };
+    
+        window.addEventListener("wheel", handleWheel);
+    
+        return () => {
+            window.removeEventListener("wheel", handleWheel);
+        };
+    }, [showContent, currentSlide]); // Dependencies ensure it updates when state changes
+    
+
+    const handleScroll = () => {
+        setShowContent(true);
+        setCurrentSlide(0); // Start from the first slide
+        setIsSlideOpen(true); // Ensure the slides open again
+    };
+
+    
 
     const handleDrag = (event, info) => {
         console.log("Drag event detected:", info.delta.y); // Debugging
@@ -59,15 +86,7 @@ const Content = () => {
         }
     };
 
-    // Alternative: Handle Mouse Scroll for Navigation
-    const handleWheel = (event) => {
-        if (event.deltaY > 50) {
-            nextSlide(); // Scroll Down → Next Slide
-        } else if (event.deltaY < -50) {
-            prevSlide(); // Scroll Up → Previous Slide
-        }
-    };
-
+   
 
     return (
         <div className="w-full flex  flex-col items-center justify-center relative">
@@ -154,16 +173,16 @@ const Content = () => {
                             animate={{ x: "0%", opacity: 1, scale: 1 }}
                             exit={{ x: "-100%", opacity: 0, scale: 0.9 }}
                             transition={{
-                                duration: 0,
+                                duration: 2,
                                 ease: "easeInOut",
                                 opacity: { duration: 0.5 },
                                 scale: { duration: 0.8, ease: "easeOut" },
                             }}
                             drag="y"
-                            dragConstraints={{ top: -100, bottom: 100 }} // More flexible dragging
-                            dragElastic={0.5} // Smoother drag feel
+                            dragConstraints={{ top: -100, bottom: 100 }}
+                            dragElastic={0.5}
                             onDragEnd={handleDrag}
-                            onWheel={handleWheel}
+                        
                         >
                             <div className="absolute top-0 left-0 w-full h-full">
                                 {/* Video Background */}

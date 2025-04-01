@@ -13,7 +13,7 @@ const sections = [
   },
   {
     title: "Schneider Schaumburg",
-    description: "Maman Corp completed the consolidation of Schneider Chicagoland offices into one space...",
+    description: "VJC Infra completed the consolidation of Schneider Chicagoland offices into one space...",
     client: "Office Consolidation",
     industry: "Industry",
     sector: "Commercial",
@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "Ecolab Lobby",
-    description: "Maman Corp has strong expertise which allows us to work with all kinds of environment structures...",
+    description: "VJC Infra has strong expertise which allows us to work with all kinds of environment structures...",
     client: "Client",
     industry: "Industrial",
     sector: "Sector",

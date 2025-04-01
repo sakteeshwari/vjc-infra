@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Navbar({ isSlideOpen }) {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const pathname = usePathname();
@@ -60,7 +60,7 @@ export default function Navbar({ isSlideOpen }) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`px-6 md:px-32 fixed z-40 top-0 left-0 w-full flex justify-between items-center py-4 text-white uppercase transition-all duration-500 
-          ${isNavbarActive || isMenuOpen || isSlideOpen ? "bg-gray-500" : "bg-gradient-to-b from-black/50 to-transparent"}`}
+          ${isNavbarActive || isMenuOpen ? "bg-gray-500" : "bg-gradient-to-b from-black/50 to-transparent"}`}
       >
         <Link href="/">
           <motion.img

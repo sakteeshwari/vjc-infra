@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Navbar() {
+export default function Navbar({ isSlideOpen }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isNavbarActive, setIsNavbarActive] = useState(false);
   const pathname = usePathname();

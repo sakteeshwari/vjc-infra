@@ -49,7 +49,7 @@ const Footer = () => {
       <div className="max-w-7xl leading-loose tracking-wider mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 px-4">
         <p className="tracking-widest">© 2025 VJC INFRA. All Rights Reserved.</p>
         <a href="/terms-conditions" className="hover:text-gray-400 tracking-widest cursor-pointer">Terms & Conditions</a>
-        <a href="https://www.immersivegarden.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 cursor-pointer tracking-widest">
+        <a href="" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 cursor-pointer tracking-widest">
           WEBSITE BY <span className="text-white">VJC Infra Projects Private Limited</span>
         </a>
       </div>

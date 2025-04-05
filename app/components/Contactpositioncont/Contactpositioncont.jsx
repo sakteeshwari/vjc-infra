@@ -185,10 +185,10 @@ const Solutionimg = () => {
                             <p className="mt-4"><strong className=""> DRUG/ALCOHOL SCREENING: </strong></p>
                             <p className="mt- text-sm leading-7 tracking-wider">
 
-                                It is the policy of Maman Corp to maintain a safe, healthy, and productive work environment for all its employees; to produce quality goods and services for its customers in an efficient manner; to maintain the integrity and security of its facilities and property, and to perform all these functions in a fashion consistent with the interests and concerns of the communities in which it is located.
+                                It is the policy of VJC Infra to maintain a safe, healthy, and productive work environment for all its employees; to produce quality goods and services for its customers in an efficient manner; to maintain the integrity and security of its facilities and property, and to perform all these functions in a fashion consistent with the interests and concerns of the communities in which it is located.
                             </p>
                             <p className="mt-4 text-sm leading-7 tracking-wider">
-                                Pursuant to these goals, Maman Corp requires candidates for employment to pass a drug/alcohol screening test covering illegal substances and legal substances subject to abuse. This requires the candidate to submit a urine, hair, and/or blood specimen and to sign a consent and release statement provided by VJC INFRA Refusal will result in the candidate’s disqualification for further employment consideration.
+                                Pursuant to these goals, VJC Infra requires candidates for employment to pass a drug/alcohol screening test covering illegal substances and legal substances subject to abuse. This requires the candidate to submit a urine, hair, and/or blood specimen and to sign a consent and release statement provided by VJC INFRA Refusal will result in the candidate’s disqualification for further employment consideration.
                             </p>
 
                             <h2 className=" font-bold tracking-wider text-orange-600 mt-6">
@@ -205,7 +205,7 @@ const Solutionimg = () => {
                                 NO AGENCIES PLEASE: UNSOLICITED RESUMES FROM THIRD PARTY AGENCIES WILL NOT BE ACCEPTED.
                             </p>
                             <p className="mt-6 font-semibold text-sm ">
-                                PLEASE NO PHONE CALLS. MAMAN CORP IS AN EQUAL OPPORTUNITY AFFIRMATIVE ACTION EMPLOYER, INCLUDING VETERANS AND DISABILITY STATUS.
+                                PLEASE NO PHONE CALLS. VJC Infra IS AN EQUAL OPPORTUNITY AFFIRMATIVE ACTION EMPLOYER, INCLUDING VETERANS AND DISABILITY STATUS.
                             </p>
                         </div>
                     )}

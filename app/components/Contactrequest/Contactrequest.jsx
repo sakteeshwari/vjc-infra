@@ -9,9 +9,9 @@ const Careers = () => {
         <div>
             {/* Image Section */}
             <div className="h-screen mt-10 md:mt-32 lg:w-[80%] tracking-widest lg:mt-40 relative lg:mx-auto md:mx-10">
-                <img 
-                    src="/assets/about.png" 
-                    alt="section_image" 
+                <img
+                    src="/assets/about.png"
+                    alt="section_image"
                     className="w-full h-screen object-cover object-center"
                 />
 
@@ -25,13 +25,23 @@ const Careers = () => {
                     {/* Contact Information */}
                     <div className="p-4">
                         <h3 className="font-semibold text-lg mb-2">Get in touch !</h3>
-                        <p>Maman Corp.</p>
-                        <p>1055 Arthur Ave</p>
-                        <p>Elk Grove Village, IL 60007</p>
-                        <p className="font-semibold mt-3">Phone:</p>
-                        <p>847-358-2688</p>
-                        <p className="font-semibold mt-3">Email:</p>
-                        <p>maman@maman-corp.com</p>
+                        <p>VJC Infra Projects Private Limited.</p>
+                        <p>62/A, Sundari Reddy Bhavan, Ground Floor,</p>
+                        <p>Vengalrao Nagar, S.R.Nagar,</p>
+                        <p>Hyderabad-500038 Telangana, India.</p>
+                        <p className="font-semibold mt-3 text-white">Phone:</p>
+                        <p>
+                            <a href="tel:9440467000" className="text-[#E0E0E0] hover:underline">
+                                9440467000
+                            </a>
+                        </p>
+
+                        <p className="font-semibold mt-3 text-white">Email:</p>
+                        <p>
+                            <a href="mailto:info@vjcinfra.com" className="text-[#E0E0E0] hover:underline">
+                                info@vjcinfra.com
+                            </a>
+                        </p>
 
                         {/* Divider */}
                         <hr className="my-6 border-white opacity-50" />

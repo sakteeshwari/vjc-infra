@@ -18,7 +18,7 @@ const OurStory = () => {
                   Building a safer workplace.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                At Maman Corp., our team members share a commitment to high safety standards, enabling us to provide the safest and healthiest work environment possible. It begins with employee orientation and continues through ongoing training and important initiatives such as weekly on-site inspections and training sessions, employing only OSHA trained and certified carpenters and incorporating safety as an integral part of our work plans.
+                At VJC Infra, our team members share a commitment to high safety standards, enabling us to provide the safest and healthiest work environment possible. It begins with employee orientation and continues through ongoing training and important initiatives such as weekly on-site inspections and training sessions, employing only OSHA trained and certified carpenters and incorporating safety as an integral part of our work plans.
                 </p>
                 <div className="mt-6 flex  items-center space-x-2">
                     <Link href="/about" passHref>

@@ -18,7 +18,7 @@ const OurStory = () => {
                    We go beyond the expected to find the best possible solution.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                The challenge of construction design is finding a singularly elegant solution to answer a myriad of competing questions: Is it beautiful, but also practical? Efficient. Exquisitely crafted. Environmentally responsible. On time, on point, on budget. Maman Corp. brings together the experience of nearly two decades in construction with the knowledge and vision to apply new technologies, materials and innovative design. We work closely with you to fully understand your objectives and go beyond the expected to find the best possible solution.
+                The challenge of construction design is finding a singularly elegant solution to answer a myriad of competing questions: Is it beautiful, but also practical? Efficient. Exquisitely crafted. Environmentally responsible. On time, on point, on budget. VJC Infra brings together the experience of nearly two decades in construction with the knowledge and vision to apply new technologies, materials and innovative design. We work closely with you to fully understand your objectives and go beyond the expected to find the best possible solution.
                 </p>
                 <div className="mt-6 flex  items-center space-x-2">
                     <Link href="/about" passHref>

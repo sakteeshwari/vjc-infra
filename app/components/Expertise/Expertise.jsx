@@ -18,7 +18,7 @@ const OurStory = () => {
                   A higher level of satisfaction inside and out.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                As you might expect of a company that began as a high-end interiors contractor, we pay strict attention to the smallest details. As we've grown and evolved into a general contractor, our commitment to exceptional quality has never wavered. Maman Corp. today ranks as one of the most highly-regarded construction management firms in the healthcare, retail, and commercial and industrial markets. And while we're proud of our reputation for quality work, we're prouder still that first and foremost in everything we do is an unwavering commitment to client satisfaction.
+                As you might expect of a company that began as a high-end interiors contractor, we pay strict attention to the smallest details. As we've grown and evolved into a general contractor, our commitment to exceptional quality has never wavered. VJC Infra today ranks as one of the most highly-regarded construction management firms in the healthcare, retail, and commercial and industrial markets. And while we're proud of our reputation for quality work, we're prouder still that first and foremost in everything we do is an unwavering commitment to client satisfaction.
                 </p>
                 <div className="mt-6 flex items-center space-x-2">
                     <Link href="/about" passHref>

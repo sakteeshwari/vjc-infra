@@ -18,7 +18,7 @@ const OurStory = () => {
                     Our highly skilled team is always at your service.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                A successful project leaves nothing to chance. That's why Maman Corp. has assembled a team of experienced, highly-skilled professionals. We've worked together for many years, and it shows: Things just naturally fall into place, simply and easily. We've also developed a strong working relationship with vendors and subcontractors, many of whom we've worked with for well over a decade. As a result, we're able to bring our clients smarter, more efficient solutions.
+                A successful project leaves nothing to chance. That's why VJC Infra has assembled a team of experienced, highly-skilled professionals. We've worked together for many years, and it shows: Things just naturally fall into place, simply and easily. We've also developed a strong working relationship with vendors and subcontractors, many of whom we've worked with for well over a decade. As a result, we're able to bring our clients smarter, more efficient solutions.
                 </p>
                 <div className="mt-6 flex cursor-pointer items-center space-x-2">
                     <Link href="/about" passHref>

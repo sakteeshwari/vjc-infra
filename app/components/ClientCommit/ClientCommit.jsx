@@ -18,7 +18,7 @@ const OurStory = () => {
                    Quality construction begins with a quality relationship.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                Quality construction is more than materials and craftsmanship. It stems from the quality of the relationship between client and contractor. At Maman Corp., we're mindful of fostering a family-like atmosphere. We find projects come together much easier and the finished product is far superior when people collaborate and freely share ideas. We also think you try just that little bit harder to please your clients when they seem like family to you. Maybe that's why so many work with us again and again.
+                Quality construction is more than materials and craftsmanship. It stems from the quality of the relationship between client and contractor. At VJC Infra, we're mindful of fostering a family-like atmosphere. We find projects come together much easier and the finished product is far superior when people collaborate and freely share ideas. We also think you try just that little bit harder to please your clients when they seem like family to you. Maybe that's why so many work with us again and again.
                 </p>
                 <div className="mt-6 flex leading-loose items-center space-x-2">
                     <Link href="/about" passHref>

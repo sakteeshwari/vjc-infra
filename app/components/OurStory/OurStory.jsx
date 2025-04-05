@@ -19,7 +19,7 @@ const OurStory = () => {
                     It&apos;s also an attitude instilled in our company.
                 </motion.h1>
                 <p className="text-gray-700 tracking-widest lg:text-lg mt-4 leading-relaxed">
-                    VJC INFRA began in 1997 as an interior finishing contractor in suburban 
+                    VJC Infra began in 1997 as an interior finishing contractor in suburban 
                     Chicago. Since then, we&apos;ve grown to become a full-service Construction 
                     Management team and General Contractor working in 15 states, and counting. 
                     Though we&apos;re considerably larger, and though our expertise has grown 

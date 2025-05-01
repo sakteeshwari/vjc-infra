@@ -4,20 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const sections = [
   {
-    title: "Water University",
-    description: "This 9,380-square-foot Water University facility includes operation equipment that clients will use to learn how to minimize water use...",
+    title: "Tech Park",
+    description: "A state-of-the-art commercial complex designed to support IT and corporate businesses, equipped with smart infrastructure and sustainable design.",
     client: "Customer Experience",
     industry: "Industrial Commercial",
     sector: "Technology, AV",
     image: "/assets/water.png",
   },
   {
-    title: "Schneider Schaumburg",
-    description: "VJC Infra completed the consolidation of Schneider Chicagoland offices into one space...",
+    title: "Green Valley Residences",
+    description: "A premium gated community featuring modern 2 & 3 BHK apartments with lush green surroundings and top-notch amenities for urban families.",
     client: "Office Consolidation",
     industry: "Industry",
     sector: "Commercial",
-    image: "/assets/schneider.png",
+    image: "/assets/sch2.png",
   },
   {
     title: "Administration and Meeting spaces",
@@ -25,15 +25,15 @@ const sections = [
     client: "Corporate",
     industry: "Industry",
     sector: "Commercial",
-    image: "/assets/smart.png",
+    image: "/assets/meet.jpg",
   },
   {
-    title: "Ecolab Lobby",
+    title: "Innovative Lobby",
     description: "VJC Infra has strong expertise which allows us to work with all kinds of environment structures...",
     client: "Client",
     industry: "Industrial",
     sector: "Sector",
-    image: "/assets/ecolab.png",
+    image: "/assets/ecolab.jpg",
   },
   {
     title: "High Security Spaces & Data Centers",

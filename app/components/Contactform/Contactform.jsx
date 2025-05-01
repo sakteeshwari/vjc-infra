@@ -59,6 +59,7 @@ const Contactus = () => {
 
     return (
         <motion.div 
+            id="contact-us"
             className="h-full w-full py-10 flex items-center justify-center px-4 bg-gradient-to-r from-gray-100 to-gray-300"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

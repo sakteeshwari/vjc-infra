@@ -8,16 +8,16 @@ const AboutSection = () => {
       </div>
       <div className="lg:w-1/2 text-gray-700   leading-relaxed">
         <p className="mb-4">
-          In 1997, VJC INFRA opened its doors in a rented storefront in suburban Chicago. We had four staff, a handful of carpenters, two folding card tables, and a computer. We also had drive, commitment, energy, and a vision.
+        In 2009, VJC INFRA began its journey from a modest setup with a small but passionate team, a couple of desks, and a shared vision. What we lacked in size, we made up for with drive, determination, and a commitment to excellence.
         </p>
         <p className="mb-4">
-          Two decades later, we’ve grown to become a comprehensive construction management team and general contractor working in 15 states and counting. We do more than build spaces—we create environments where your team can grow, thrive, and innovate. Our superpower as a company is the ability to hear your need, envision it, and deliver against it.
+        Over the years, we have grown into a full-fledged construction management firm and general contractor, operating across multiple states. We go beyond just building structures—we craft environments where businesses can thrive, teams can grow, and innovation can flourish. Our true strength lies in understanding your vision, shaping it, and delivering results that exceed expectations.
         </p>
         <p className="mb-4">
-          To do that, we create customized solutions for new construction, additions, and renovations. We’ve built a team of in-house experts as well as a broad network of specialists so that we can deliver exactly what you need in creative solutions, technology, and materials. With every project, we strive to create—and realize—a vision that fulfills the client’s needs and results in an extraordinary environment.
+        We specialize in tailored solutions for new constructions, additions, and renovations. Our success is built on a foundation of in-house talent and a strong network of experts, enabling us to offer the right blend of creativity, technology, and materials for every project. With each endeavor, we aim to bring your vision to life in a way that’s functional, inspiring, and aligned with your goals.
         </p>
         <p className="mb-4">
-          While we’ve grown, a few fundamentals have remained constant. We’re still a family-owned business with client commitment and superior partnership foremost in mind on every job. We’re still driven to bring creative solutions and expertise to every challenge. We also love what we do—and it shows, in both the quality of our work and in the enduring relationships that have fueled our company growth.
+        Despite our growth, our core values remain unchanged. We are still a family-owned business rooted in integrity, client commitment, and long-term partnerships. We continue to approach every project with fresh thinking, expert insight, and a passion for what we do. This passion is reflected in the quality of our work and in the trusted relationships that have driven our success.
         </p>
         <p className="mb-4">
           We’re always looking to build the next great thing. Is it yours? 

@@ -40,6 +40,7 @@ const Footer = () => {
         <p className="font-bold text-lg tracking-widest">VJC Infra Projects Private Limited.</p>
         <p className="tracking-widest">62/A, Sundari Reddy Bhavan, Ground Floor, Vengalrao Nagar, S.R.Nagar,</p>
         <p className="tracking-widest">Hyderabad-500038 Telangana, India.</p>
+        <p className="tracking-widest text-orange-400">Contact-No : 9440467000</p>
       </div>
 
       {/* Divider */}

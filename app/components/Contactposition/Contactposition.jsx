@@ -37,15 +37,10 @@ const Solutionimg = () => {
 
           {/* Description */}
           <p className="text-gray-500 mt-5 font-semibold text-sm md:text-base leading-relaxed">
-            Please remember that all offers of employment at VJC INFRA are
-            subject to the successful completion and verification of
-            pre-employment drug screen test, clear MVR, background screen which
-            may include education verification where applicable, E-Verify
-            authorization, & I-9 documentation.
+          At VJC INFRA, we’re always on the lookout for talented individuals who are passionate about construction, innovation, and delivering excellence.
           </p>
           <p className="text-gray-500 mt-5 font-semibold text-sm md:text-base leading-relaxed">
-            No Agencies Please. Unsolicited Resumes from third party agencies
-            will not be accepted.
+          Please note that all employment opportunities at VJC INFRA are subject to successful completion and verification of the following: pre-employment background verification (which may include education and previous employment checks), valid identity and address proof as per Indian laws, and other relevant documentation as required.
           </p>
 
          

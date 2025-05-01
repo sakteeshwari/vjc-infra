@@ -79,7 +79,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex space-x-6 font-bold text-sm">
+        <ul className="hidden lg:flex space-x-8 font-bold tracking-widest text-sm">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link
